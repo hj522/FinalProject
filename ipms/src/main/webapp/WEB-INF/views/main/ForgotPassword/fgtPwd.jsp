@@ -35,7 +35,7 @@
     let text2;
     $("#btn").on("click", function () {
       to= $("#emailId").val();
-      alert("Click");
+//       alert("Click");
       console.log("to::"+to);
       let fData = $("#frm").serialize();
       $.ajax({

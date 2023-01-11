@@ -30,11 +30,8 @@
     	padding-left: 14px;
     }
     </style>
-    <div style="bottom:30px;" class="content-header-left col-md-6 col-12 mb-2">
-			<h3 class="content-header-title mb-0"><b>onGoing Project</b></h3>
-			<div class="row breadcrumbs-top">
-				<div class="breadcrumb-wrapper col-12"></div>
-			</div>
+    <div class="content-header-left col-md-6 col-12 mb-2">
+			<h3 class="content-header-title mb-0" style="font-family: noto sans, malgun gothic, AppleGothic, dotum;"><b>프로젝트 현황</b></h3>
 		</div>
 <section  class="row mt-2 scc">
     <c:forEach var="item" items="${list}">
@@ -44,7 +41,7 @@
             <div class="card-img-top img-fluid bg-cover height-200" style="background: url('/resources/upload/img/${item.projImgRoute}');"></div>
             <div class="profile-card-with-cover-content text-center">
                 <div class="card-body">
-                    <h4 class="card-title"><a href="/proj/${item.projId}/dashboard">${item.projName}</a></h4>
+                    <h3 class="card-title" style="font-family: noto sans, malgun gothic, AppleGothic, dotum;"><a href="/proj/${item.projId}/dashboard">${item.projName}</a></h3>
                     <ul class="list-inline list-inline-pipe">
                         <li>&nbsp; ${item.memName}</li>
                         <br>

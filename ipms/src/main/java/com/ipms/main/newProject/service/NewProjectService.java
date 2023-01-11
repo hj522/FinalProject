@@ -43,19 +43,28 @@ public class NewProjectService {
 
 //        String uploadFolder = "E:\\IdeaProjects\\ipms\\src\\main\\webapp\\resources\\upload\\img";
         String uploadFolder = servletContext.getRealPath("/") + "\\resources\\upload\\img";
-
+        
+        log.info("uploadFile : " + uploadFile);
         for (MultipartFile multipartFile : uploadFile) {
             log.info("Upload File Name: " + multipartFile.getOriginalFilename());
             log.info("Upload File Size: " + multipartFile.getSize());
-
-            File saveFile = new File(uploadFolder, multipartFile.getOriginalFilename());
-            projVO.setProjImgRoute(multipartFile.getOriginalFilename());
-
-            try {
-                multipartFile.transferTo(saveFile);
-            } catch (Exception e) {
-                log.error(e.getMessage());
-            } // end catch
+            
+            log.info("multipartFile.isEmpty :" + multipartFile.isEmpty());
+            
+            
+            if(multipartFile.isEmpty()) {//파일이 없을 때
+            	projVO.setProjImgRoute("IPMSlogo2.png");
+            	
+            }else {//파일이 있을 때 실행
+	            File saveFile = new File(uploadFolder, multipartFile.getOriginalFilename());
+	            projVO.setProjImgRoute(multipartFile.getOriginalFilename());
+	
+	            try {
+	                multipartFile.transferTo(saveFile);
+	            } catch (Exception e) {
+	                log.error(e.getMessage());
+	            } // end catch
+            }
         } // end for
         //프로젝트 생성
         if (this.projInsert(projVO) == 1) {

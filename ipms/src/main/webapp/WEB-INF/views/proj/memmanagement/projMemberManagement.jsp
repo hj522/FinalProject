@@ -32,7 +32,7 @@
             },
             success: function (division) {
                 if (division == 1) {
-                    alert("승인완료");
+                    alert("하차 승인 완료");
                     setTimeout(function () {
                         location.reload();
                     });
@@ -56,7 +56,7 @@
             },
             success: function (division) {
                 if (division == 1) {
-                    alert("승인완료");
+                    alert("추방 완료");
                     setTimeout(function () {
                         location.reload();
                     });
@@ -69,9 +69,12 @@
     }
 
 
-    function fn_invitationBtn(memCode, projId) {
-        var msg = "${mvo.member.memName}님이 프로젝트에 초대 하였습니다.,";
+    function fn_invitationBtn(memCode,memName, projId) {
+        var msg = memName+"님을 프로젝트에 초대 하였습니다.,";
         alert(msg);
+        setTimeout(location.reload(), 1500);
+//         location.reload();
+// 		opener.location.reload();
         $.ajax({
             url: "/proj/${projId}/sendInvitation",
             type: "post",
@@ -83,7 +86,7 @@
             success: function (division) {
                 if (division == 1) {
                     socket.send(msg);
-
+					location.reload();
                 }
                 setTimeout(function () {
                     location.reload();
@@ -97,20 +100,17 @@
 
 </script>
 
-
-<div class="content-wrapper">
-
     <div class="content-body">
         <!-- Shopping cards section start -->
         <div class="container-fluid">
             <div class="row" style="height: 70px;">
                 <div class="col-6  mt-3 mb-1 " style="height: 30px;">
-                    <h3 class="text-uppercase ml-5">
+                    <h3 class="text-uppercase">
                         <b>프로젝트 참여 인원</b>
                         <div id="disp"></div>
                     </h3>
                 </div>
-                <div class="col-4  mt-3 mb-1 ml-5" style="float: left;">
+                <div class="col-4  mt-3 mb-1" style="float: left;">
                     <h3 class="text-uppercase">
                         <b>하차 지원 인원</b>
                     </h3>
@@ -191,14 +191,14 @@
         <div class="container-fluid">
             <div class="row" style="height: 70px;">
                 <div class=" col-6  mt-3 mb-1 " style="height: 30p; display: flex;">
-                    <h3 class="text-uppercase ml-5">
-                        <b> 프로젝트 초대 인원</b>
+                    <h3 class="text-uppercase">
+                        <b>&nbsp;프로젝트 초대 인원</b>
                     </h3>
                     <button type="button" class="btn btn-sm" data-toggle="modal" data-target="#success"
-                            style="margin-bottom: 50px;">신청 목록 보기
+                            style="margin-bottom: 50px;">초대하기
                     </button>
                 </div>
-                <div class="col-4  mt-3 mb-1 ml-5" style="float: left;">
+                <div class="col-4  mt-3 mb-1" style="float: left;">
                     <h3 class="text-uppercase">
                         <b>참여 인원 추방</b>
                     </h3>
@@ -237,7 +237,7 @@
                                                 <td class="text-truncate">${item.techStackCode}</td>
                                                 <td class="text-truncate">
                                                     <button id="invitationBtn" class="badge badge-success"
-                                                            onclick="fn_invitationBtn('${item.memCode}','${projId}')">초대
+                                                            onclick="fn_invitationBtn('${item.memCode}','${item.memName}','${projId}')">초대
                                                     </button>
                                                 </td>
                                                 </c:forEach>
@@ -273,7 +273,7 @@
                             <tr>
                                 <th>번호</th>
                                 <th>초대코드</th>
-                                <th>회원코드</th>
+                                <th>회원명</th>
                                 <th>상태</th>
                             </tr>
                             </thead>
@@ -331,5 +331,4 @@
         </div>
     </div>
 
-</div>
 </div>

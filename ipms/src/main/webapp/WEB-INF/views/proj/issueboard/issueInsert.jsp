@@ -71,8 +71,6 @@ taskId {
 																		<option value="" selected>검색</option>
 																	</select>
 																</div>
-															&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-															<button type="button" id="searchBtn" class="btn btn-icon btn-secondary mr-1 mb-1"><i class="ficon feather icon-search"></i>검색</button>
 															</div>
 														</div>
 													</div>

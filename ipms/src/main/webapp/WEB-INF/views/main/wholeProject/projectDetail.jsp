@@ -316,7 +316,7 @@ var mine2 = "${mvo.member.memEmail}";
 // 댓글 등록
 	$("#projCmtAdd").on("click",function() {
 		
-		alert("댓글 등록 떠라");
+// 		alert("댓글 등록 떠라");
 		
 		let projId = $("#projId").val();
 		let projSmryCmtNum = $("#projSmryCmtNum").val();		// 댓글 번호
@@ -358,7 +358,7 @@ var mine2 = "${mvo.member.memEmail}";
 	//하위 댓글 등록 창 열기
 	function fn_lowCmtInsert(param, idx){
 		
-		alert(param+" : "+idx);
+// 		alert(param+" : "+idx);
 		
 		$("#ctsInput"+param).css("display","block");
 //		$("#cts"+param).css("display","none");
@@ -368,7 +368,7 @@ var mine2 = "${mvo.member.memEmail}";
 	//하위 댓글 등록
 	function fn_lowCmtInsertOK(param, idx){
 		
-		alert("대댓글 등록 떠라"+param);
+// 		alert("대댓글 등록 떠라"+param);
 		
 		let projId = $("#projId").val();
 		let memCode = mine;										// 댓글 작성자
@@ -448,7 +448,7 @@ var mine2 = "${mvo.member.memEmail}";
 	// 수정 완료 버튼
 	function fn_updateGo(param, idx) {
 		
-		alert("수정버튼 : " + param + " : " + idx);
+// 		alert("수정버튼 : " + param + " : " + idx);
 		
 		//기본키
 		let projSmryCmtNum = param;
@@ -488,7 +488,7 @@ var mine2 = "${mvo.member.memEmail}";
 	// 댓글 삭제
 	function fn_delete(param){
 		
-		alert("삭제 눌렀엉");
+// 		alert("삭제 눌렀엉");
 		
 		console.log("this: ",param);
 		

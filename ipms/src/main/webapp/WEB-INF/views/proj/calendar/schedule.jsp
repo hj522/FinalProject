@@ -107,7 +107,7 @@ function stringFormat(p_val){
 	// 띄우기 - 일정 리스트 
 	function loadEvent(){
 		
-		console.log("왔다");
+// 		console.log("왔다");
 		
 		  let arr = [];
 		  
@@ -150,7 +150,7 @@ function stringFormat(p_val){
 	// 띄우기 - 일감(task) 리스트
 	function loadEvent2() {
 		
-		console.log("일감 왔다");
+// 		console.log("일감 왔다");
 		
 		  let arr2 = [];
  			
@@ -203,7 +203,7 @@ function stringFormat(p_val){
 	// 띄우기 - 모든 상위 일감(task) 리스트
 	function loadEvent3() {
 		
-		console.log("상위 일감");
+// 		console.log("상위 일감");
 		
 		  let arr3 = [];
  			
@@ -643,7 +643,7 @@ function stringFormat(p_val){
 					location.reload();
 				},
 				error: function(xhr, status, error) {
-					alert('일정 삭제 실패<br> 새로고침 후 재시도 해주세요.');
+					alert('일정 삭제 실패. 새로고침 후 재시도 해주세요.');
 				}
 					
 			}); // ajax end
@@ -774,7 +774,7 @@ function stringFormat(p_val){
 			  },
 				  error : function(xhr, status, error){
 					    //alert(xhr.responseText);
-					  alert('일정 수정 실패\n새로고침 후 재시도 해주세요');
+					  alert('일정 수정 실패. 새로고침 후 재시도 해주세요');
 			  }
 		});
 	

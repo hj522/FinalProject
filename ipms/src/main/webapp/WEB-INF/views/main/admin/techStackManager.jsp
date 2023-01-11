@@ -35,7 +35,7 @@
                             location.reload();
                         });
                     } else {
-                        alert(data);
+//                         alert(data);
                     }
                 }
             });
@@ -58,7 +58,7 @@
                             location.reload();
                         });
                     } else {
-                        alert(data);
+//                         alert(data);
                     }
                 }
             });

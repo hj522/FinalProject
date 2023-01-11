@@ -28,7 +28,9 @@
         }
 
         function fn_wthdrPrjct(projId){
-            alert(projId);
+        	
+//             alert(projId);
+            
             $.ajax({
                 type : 'get',
                 url : '/proj/${projId}/withdrawalProject',
@@ -42,7 +44,7 @@
                         alert("프로젝트를 탈퇴 하였습니다.");
                         location.href="/main/page";
                     }else{
-                        alert(data);
+//                         alert(data);
                         setTimeout(function(){
                             location.reload();
                         });
@@ -142,7 +144,7 @@
 								<div class="modal-body">
 									<h5 style="text-align:center; padding-bottom:5px;">정말로 프로젝트를 중도 해산하시겠습니까?</h5><br>
 									<!-- 부여받은 캡차 사이트 키 -->
-									<div style="display: flex; justify-content: center;" id="iRecaptcha" class="g-recaptcha" data-sitekey=""></div>
+									<div style="display: flex; justify-content: center;" id="iRecaptcha" class="g-recaptcha" data-sitekey="6LdMkrYjAAAAAB1bWwgum0vkjwkX9Z2C93BOwEXt"></div>
 								</div>
 								<div class="modal-footer">
 									<button type="button" class="btn btn-outline-danger" id="projDel" style="" onclick="check_recaptcha('${projId}')">확인</button>

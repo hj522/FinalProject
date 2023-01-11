@@ -148,11 +148,11 @@
 																		data.projVOList : List<ProjVO>
 																	 -->
 																	<c:forEach var="data" items="${data.projVOList}">
-																	<c:if test="${data.projName eq null}">
-																		<tr>
-																		<td colspan='2' style="text-align:center;">아직 참여중인 프로젝트가 없습니다.</td>
-																		</tr>
-																	</c:if>
+<%-- 																	<c:if test="${data.projName eq null}"> --%>
+<!-- 																		<tr> -->
+<!-- 																		<td colspan='2' style="text-align:center;">아직 참여중인 프로젝트가 없습니다.</td> -->
+<!-- 																		</tr> -->
+<%-- 																	</c:if> --%>
 																	<c:if test="${data.projEndDate > now}">
 																	<tr>
 																		<td>${data.projName}</td>
@@ -193,11 +193,11 @@
 <%-- 																<jsp:useBean id="now" class="java.util.Date" /> --%>
 																<fmt:formatDate value="${now}" pattern="yyyy-MM-dd" var="today" />
 																	<c:forEach var="data2" items="${data.projVOList}">
-																		<c:if test="${data2.projName eq null}">
-																			<tr>
-																			<td colspan='2' style="text-align:center;">아직 완료한 프로젝트가 없습니다.</td>
-																			</tr>
-																		</c:if>
+<%-- 																		<c:if test="${data2.projName eq null}"> --%>
+<!-- 																			<tr> -->
+<!-- 																			<td colspan='2' style="text-align:center;">아직 완료한 프로젝트가 없습니다.</td> -->
+<!-- 																			</tr> -->
+<%-- 																		</c:if> --%>
 																		<fmt:formatDate value='${data2.projEndDate}' var='endDate' pattern='yyyy-MM-dd'/>
 																		<c:if test="${data2.projEndDate < now}">
 																		<tr>

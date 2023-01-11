@@ -33,7 +33,8 @@ public class NewProjectController {
      * 프로젝트 생성 -> 프로젝트 팀 구성 -> 프로젝트 멤버 생성
      */
     @RequestMapping(value = "/newProjectPost", method = RequestMethod.POST)
-    public String projectCreate(@ModelAttribute ProjVO projVO, @ModelAttribute MemVO memVO, Authentication authentication, MultipartFile[] uploadFile) {
+    public String projectCreate(@ModelAttribute ProjVO projVO, @ModelAttribute MemVO memVO
+    		, Authentication authentication, MultipartFile[] uploadFile) {
         String  test= this.newProjectService.projectCreate(projVO, memVO, authentication,uploadFile);
         log.info("==========================="+test);
         if(test .equals("success")){

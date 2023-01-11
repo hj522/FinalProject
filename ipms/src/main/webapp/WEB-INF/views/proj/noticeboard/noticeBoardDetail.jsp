@@ -120,7 +120,7 @@ $(function() {
 	
 	$("#ntDel").on("click",function() {
 		
-		alert("삭제 눌렀엉");
+//		alert("삭제 눌렀엉");
 		
 		let projNtNum = $("#projNtNum").val(); // 공지 글 번호
 		let projId = $("#projId").val();

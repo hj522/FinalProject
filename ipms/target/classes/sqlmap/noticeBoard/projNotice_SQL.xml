@@ -6,7 +6,7 @@
 	<select id="getNtPage" parameterType="com.ipms.commons.vo.Criteria" resultType="com.ipms.proj.noticeboard.vo.NoticeBoardVO">
 		
 		SELECT PROJ_NT_NUM
-			, MEM_CODE
+			, (SELECT M.MEM_NAME FROM MEM M WHERE P.MEM_CODE = M.MEM_CODE) AS MEM_CODE
 			, PROJ_NT_TITLE
 			, PROJ_NT_WRITE_DATE
             FROM ( SELECT ROWNUM RN
@@ -15,7 +15,7 @@
 					, A.PROJ_NT_TITLE
 					, A.PROJ_NT_WRITE_DATE
                 FROM( SELECT PROJ_NT_NUM
-							, (SELECT M.MEM_NAME FROM MEM M WHERE P.MEM_CODE = M.MEM_CODE) AS MEM_CODE
+							, MEM_CODE
 							, PROJ_NT_TITLE
 							, PROJ_NT_WRITE_DATE
                         FROM PROJ_NT P

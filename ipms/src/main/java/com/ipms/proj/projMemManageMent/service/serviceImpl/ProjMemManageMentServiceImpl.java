@@ -36,7 +36,9 @@ public class ProjMemManageMentServiceImpl implements ProjMemManageMentService {
 
     @Override
     public List<ProjVO> projectInvitationList(ProjVO projVO) {
-        return this.memManageMapper.projectInvitationList(projVO);
+    	List<ProjVO> list = this.memManageMapper.projectInvitationList(projVO);
+    	list.remove(list.size()-1);
+        return list;
     }
 
     @Override

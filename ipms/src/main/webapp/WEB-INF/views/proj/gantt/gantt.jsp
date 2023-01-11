@@ -13,6 +13,10 @@
 </style>
 </head>
 
+<div style="padding-bottom:15px;">
+<span class="fc-daygrid-event-dot" style="background-color: #8299D8; border-color: #8299D8; color: white;">상위 일감</span>
+<span class="fc-daygrid-event-dot" style="background-color: #CFE4F2; border-color: #CFE4F2; color: #135C94">하위 일감</span>
+</div>
 <div id= "mygantt" class="mygantt" style='width:95%; height:95%;position: absolute;'></div>
 
 <script>
@@ -60,7 +64,7 @@ $(function(){
 					linksObj.source = resp[i].highTaskId;
 					linksObj.target = taskObj.id;
 				}else{
-					taskObj.color = "#5CE75C";
+					taskObj.color = "#8299D8";
 					linksObj.source = taskObj.id;
 				}
 				linksObj.target = taskObj.id;

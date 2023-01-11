@@ -91,5 +91,6 @@
 		WHERE m.PROJ_ID = p.PROJ_ID
 		AND m.MEM_CODE = #{memId}
 		AND m.DELETE_YN = 'n'
+		order by PROJ_CREATN_DATE asc
 	</select>
 </mapper>

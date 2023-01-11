@@ -120,12 +120,12 @@
                 },
                 success: function (division) {
                     if (division == 1) {
-                        alert("승인완료");
+                        alert("승인 완료");
                         setTimeout(function () {
                             location.reload();
                         });
                     } else {
-                        alert("실패");
+                        alert("승인 실패");
                     }
                 }
             });
@@ -185,7 +185,7 @@
                 },
                 success: function (division) {
                     if (division == 1) {
-                        alert("승인완료");
+                        alert("승인 완료");
                     } else {
                         alert(${msg});
                     }
@@ -204,10 +204,10 @@
                 },
                 success: function (division) {
                     if (division == 1) {
-                        alert("승인완료");
+                        alert("승인 완료");
                     } else {
                         alert(division);
-                        alert("실패");
+                        alert("승인 실패");
                     }
                     setTimeout(function () {
                         location.reload();
@@ -238,8 +238,9 @@
 
 <body>
 
+<div><h3 class="content-header-title mb-0" style="font-family: noto sans, malgun gothic, AppleGothic, dotum; padding-bottom:22px;"><b>초대/신청 현황 조회</b></h3></div><br>
 <div class="card" style="width: 1050px;height: 500px;">
-    <div class="card-content">
+    <div class="card-content">	
         <div class="card-body" style="width: 100%;">
             <ul class="nav nav-tabs mb-2" role="tablist">
                 <li class="nav-item"><a class="nav-link d-flex align-items-center active" id="invite-tab"

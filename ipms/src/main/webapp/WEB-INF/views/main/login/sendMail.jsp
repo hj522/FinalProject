@@ -21,7 +21,7 @@
                     type: "post",
                     data: fData,
                     success: function (data) { //여기서 data는 controller에 list이다.
-                        alert("성공");
+                        alert("메일을 전송하였습니다.");
                     }
                 })
             })
@@ -44,14 +44,14 @@ function chkPwd(){
             let pwd2 = $("#newPwd2").val();
             console.log(pwd1 + " " + pwd2);
             if(pwd1==pwd2){
-                alert("같다.");
+//                 alert("같다.");
                 location.href="/";
                 return true;
             }else{
                 $("#newPwd1").focus();
                 pwd1 = $("#newPwd1").val("");
                 pwd2 = $("#newPwd2").val("");
-                alert("다르다.");
+//                 alert("다르다.");
                 return false;
             }
 }

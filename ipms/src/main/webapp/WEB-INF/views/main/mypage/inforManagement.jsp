@@ -45,7 +45,7 @@
 <input type="hidden" name="memCode" value="${mvo.member.memCode}"/>
 <!-- BEGIN: Content-->
 <div class="content-header-left col-md-6 col-12 mb-2">
-    <h3 class="content-header-title mb-0"><b>개인 정보 관리</b></h3>
+    <h3 class="content-header-title mb-0" style="font-family: noto sans, malgun gothic, AppleGothic, dotum;"><b>개인 정보 관리</b></h3>
     <div class="row breadcrumbs-top">
         <div class="breadcrumb-wrapper col-12"></div>
     </div>

@@ -15,7 +15,7 @@
 <script>
     $(document).ready(function(){
         if(${param.error!=null}){
-            alert("다시 입력하세요");
+            alert("다시 입력해주세요.");
         }
     });
 </script>
@@ -45,11 +45,11 @@
                                 <input type="hidden" name="memPasswd" value="1234">
                                 <div class="btn-group" role="group" aria-label="Basic example" style="padding-bottom:20px;">
 <!--                                 <button type="submit" class="form-control" value="이문주(리더)">이문주(리더)</button> -->
-									<button type="button" class="btn btn-primary">박종환(팀원)</button>
-									<button type="button" class="btn btn-secondary">이문주(리더)</button>
-									<button type="button" class="btn btn-primary">이준혁(팀원)</button>
-									<button type="button" class="btn btn-secondary">김효정(리더)</button>
-									<button type="button" class="btn btn-primary">김무건(팀원)</button>
+									<button type="button" class="btn btn-primary" id="park">박종환(팀원)</button>
+									<button type="button" class="btn btn-secondary" id="leader">이문주(리더)</button>
+									<button type="button" class="btn btn-primary" id="lee">이준혁(팀원)</button>
+									<button type="button" class="btn btn-secondary" id="kim">김효정(리더)</button>
+									<button type="button" class="btn btn-primary" id="admin">관리자</button>
                                 </div>
                                 <sec:csrfInput/>
                             </form>
@@ -99,3 +99,35 @@
     </div>
     <!-- Jumbotron -->
 </section>
+
+<script>
+	$("#park").on("click",function(){
+		$("#email").val("whdghks@naver.com");
+		$("#paswd").val("whdghks1234");
+		$("form").submit();
+	});
+	$("#leader").on("click",function(){
+		$("#email").val("answn2937@naver.com");
+		$("#paswd").val("dlanswn1234");
+		$("form").submit();
+	});
+	
+	$("#lee").on("click",function(){
+		$("#email").val("wnsgur0718@naver.com");
+		$("#paswd").val("wnsgur3337");
+		$("form").submit();
+	});
+	$("#kim").on("click",function(){
+		$("#email").val("luvorlik3@gmail.com");
+		$("#paswd").val("asdf");
+		$("form").submit();
+	});
+	
+	$("#admin").on("click",function(){
+		$("#email").val("admin");
+		$("#paswd").val("admin");
+		$("form").submit();
+	});
+	
+	
+</script>

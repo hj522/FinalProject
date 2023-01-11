@@ -106,7 +106,7 @@
 	</div>
 
 		<div style="bottom:20px;" class="content-header-left col-md-6 col-12 mb-2">
-			<h3 class="content-header-title mb-0"><b>My BookMark Page</b></h3>
+			<h3 class="content-header-title mb-0" style="font-family: noto sans, malgun gothic, AppleGothic, dotum;"><b>북마크 한 프로젝트</b></h3>
 			<div class="row breadcrumbs-top">
 				<div class="breadcrumb-wrapper col-12"></div>
 			</div>
@@ -253,7 +253,7 @@ $(function(){
                   xhr.setRequestHeader(header, token);
                 },
                 success : function(result) {
-                  alert("북마크 제거완료");
+                  alert("북마크 제거 완료");
                   location.href="/main/bookmark";
               },
               error: function (jqXHR, textStatus, errorThrown)
