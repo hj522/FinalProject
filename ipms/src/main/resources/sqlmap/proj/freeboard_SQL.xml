@@ -34,7 +34,7 @@
 		<!-- CDATA: character data(문자 데이터)를 의미. 일반 문자 데이터.
 					일반 문자열로 인식되도록 할 수 있음. CDATA 사이에 원하는 텍스트를 넣어주면 해당 영역은 문자 그대로 인식됨 -->
 		SELECT PROJ_BD_ID
-			, (SELECT M.MEM_NAME FROM MEM M WHERE P.WRITER = M.MEM_CODE) AS WRITER
+			, WRITER
 			, PROJ_BD_TITLE
 			, PROJ_BD_WRITE_DATE
             FROM ( SELECT ROWNUM RN
@@ -43,7 +43,7 @@
 					, A.PROJ_BD_TITLE
 					, A.PROJ_BD_WRITE_DATE
                 FROM( SELECT PROJ_BD_ID
-							, WRITER
+							, (SELECT M.MEM_NAME FROM MEM M WHERE P.WRITER = M.MEM_CODE) AS WRITER
 							, PROJ_BD_TITLE
 							, PROJ_BD_WRITE_DATE
                         FROM PROJ_BD P

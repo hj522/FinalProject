@@ -23,7 +23,7 @@
 
 	<select id="adminProjList" parameterType="com.ipms.commons.vo.Criteria" resultType="com.ipms.main.admin.projManagement.vo.ProjManaVO">
 		SELECT PROJ_ID
-               , (SELECT M.MEM_NAME FROM MEM M WHERE P.MEM_CODE = M.MEM_CODE) AS MEM_CODE
+               , MEM_CODE
                , PROJ_NAME
             , PROJ_STRT_DATE
                , PROJ_END_DATE
@@ -44,7 +44,7 @@
                     , A.PROJ_IMG_ROUTE
                     , A.DELETE_WHTH
                 FROM( SELECT PROJ_ID
-                    , MEM_CODE
+                    , (SELECT M.MEM_NAME FROM MEM M WHERE P.MEM_CODE = M.MEM_CODE) AS MEM_CODE
                     , PROJ_NAME
                     , PROJ_STRT_DATE
                     , PROJ_END_DATE
@@ -67,6 +67,7 @@
                     WHERE RN > ( #{pageNum} - 1 ) * #{amount} AND RN <= #{pageNum} * #{amount}
                     ]]>
 	</select>
+	
 	
 	<select id="getTotal" resultType="int" parameterType="com.ipms.commons.vo.Criteria">
 		SELECT COUNT(PROJ_ID)
