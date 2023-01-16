@@ -68,10 +68,9 @@
         });
     }
 
-
     function fn_invitationBtn(memCode,memName, projId) {
-        var msg = memName+"님을 프로젝트에 초대 하였습니다.,";
-        alert(msg);
+        var msg = "\'${projName}\'에 초대되셨습니다.";
+        alert(memName+"님을 프로젝트에 초대 하였습니다.,");
         setTimeout(location.reload(), 1500);
 //         location.reload();
 // 		opener.location.reload();
@@ -101,6 +100,7 @@
 </script>
 
     <div class="content-body">
+    <input type="hidden" value="${ProjectParticipantsMem[0].projName}" id="projName">
         <!-- Shopping cards section start -->
         <div class="container-fluid">
             <div class="row" style="height: 70px;">

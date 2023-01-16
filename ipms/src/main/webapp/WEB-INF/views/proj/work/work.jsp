@@ -106,7 +106,7 @@
 	src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
 <div class="app-content">
 		일감관리  &nbsp;<button type="button" data-toggle="popover" data-placement="right" data-container="body" 
-               data-original-title="문서함 이용 안내" data-content="팀원은 리더가 등록한 상위일감에 대하여 하위일감을 등록 할 수 있으며,상위일감은 프로젝트 리더만 등록 가능합니다. 하위일감 등록 시 미승인 일감으로 이동됩니다. 등록한 일감은 리더의 승인 후 등록한 상위일감의 하위로 이동됩니다.">
+               data-original-title="일감관리 이용 안내" data-content="팀원은 리더가 등록한 상위일감에 대하여 하위일감을 등록 할 수 있으며,상위일감은 프로젝트 리더만 등록 가능합니다. 하위일감 등록 시 미승인 일감으로 이동됩니다. 등록한 일감은 리더의 승인 후 등록한 상위일감의 하위로 이동됩니다.">
                <i class="fa fa-question-circle"></i>
                </button>
 		

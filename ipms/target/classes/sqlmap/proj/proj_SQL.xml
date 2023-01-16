@@ -89,7 +89,7 @@
 
       rownum <= #{pageNum} * #{amount}
            AND proj_opn_whth='Y'
-             and proj_id <> 'P001'
+             and proj_id <> 'P000'
               order by proj_creatn_date desc
       )
   where rn > (#{pageNum} -1) * #{amount}

@@ -222,8 +222,8 @@
                                     <input type="text" id="memEmail" name="memEmail" maxlength="40" req
                                            placeholder="이메일 형식을 맞춰서 입력하세요.">
                                     <button type="button" id="fchgBtn"
-                                            class="btn btn-success btn-min-width mr-1 mb-1" onclick="registerCheck()"
-                                            style="float: right;width: 30px;display: block">중복체크
+                                            class="btn btn-secondary" onclick="registerCheck()"
+                                            style="display:inline-block; width: 105px; text-align:center; line-height:20px;">중복체크
                                     </button>
                                     <p class="txt_guide square">
                                                 <span class="
@@ -333,7 +333,7 @@
                         <input type="hidden" name="memAuthList[0].memAuth" value="ROLE_MEMBER"/>
                         <sec:csrfInput/>
                         <div id="formSubmit" class="form_footer" style="border-top: 1px solid #333;">
-                            <button type="submit" class="btn active btn_join">가입하기</button>
+                            <button type="submit" class="btn btn-primary" style="text-align:center; line-height:20px; width:200px;">가입하기</button>
                         </div>
                     </form>
                 </div>

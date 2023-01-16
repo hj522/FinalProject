@@ -360,7 +360,7 @@ tr{
 									<td>\${data[i].memCode}</td>
 								</tr>`							
 							}
-							if(data[i].taskStusCode == 'success'){
+							if(data[i].taskStusCode == 'secondary'){
 							str +=	`<td><span class="badge badge-success">일반</span></td>
 									<td>\${data[i].taskPgres}%</td>
 									<td>\${data[i].memCode}</td>

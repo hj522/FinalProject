@@ -37,7 +37,7 @@
 		<div class="form-group">
 			</div>
 			<c:if test="${wikiDetail eq null}">
-			<h1>wiki등록된 태그들 입니다</h1>
+			<h1>WIKI</h1>
 			<hr>
 			<c:forEach items="${list}" var="wiki" varStatus="stat">	
 					<h4><a href="?wikiId=${wiki.wikiId}">${wiki.wikiTitle}</a></h4>

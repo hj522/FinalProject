@@ -48,7 +48,7 @@
 			<div class="card-head">
 				<div class="card-header">
 					<h1 class="card-title" style="font-family: 'MICEGothic Bold';">문서함&nbsp;&nbsp;<button type="button" data-toggle="popover" data-placement="right" data-container="body" 
-					data-original-title="문서함 이용 안내" data-content="ㅋㅋ"><i class="fa fa-question-circle"></i></button></h1>
+					data-original-title="문서함 이용 안내" data-content="문서함은 윈도우 탐색기 형식입니다. 왼쪽의 폴더를 클릭하여 폴더 내부로 접근할 수 있습니다."><i class="fa fa-question-circle"></i></button></h1>
 					<div class="heading-elements mt-0">
 						<button id="newdir" class="btn btn-primary btn-md" data-toggle="modal"
 							data-target="#AddFoder">
@@ -92,7 +92,6 @@
 							<div class="modal-dialog" role="document">
 								<div class="modal-content">
 									<section class="contact-form">
-										<!-- action="/proj/docsFileUpload" method="post" enctype="multipart/form-data" -->
 										<form id="fileUploadForm" class="contact-input">
 											<div class="modal-header">
 												<h5 class="modal-title" id="exampleModalLabel1">파일 업로드</h5>
@@ -115,7 +114,6 @@
 															class="d-none d-lg-block"></span>
 												</fieldset>
 											</div>
-											<!-- <sec:csrfInput/> -->
 										</form>
 									</section>
 								</div>
@@ -150,7 +148,7 @@
 				<!-- jstree 끝 -->
 				<br>
 				<div class="card-body" style="width: 75%; float: right; padding: 0;">
-					<!-- Task List table -->
+					<!-- docs List table -->
 					<div class="table-responsive">
 						<div id="users-contacts_wrapper" class="dataTables_wrapper dt-bootstrap4">
 							<div class="row">
@@ -282,7 +280,7 @@
 		let projId = $("#projId").data("projid");
 		console.log("projId : ", projId);
 		$.ajax({
-			url : "/proj/${projId}/docTest",
+			url : "/proj/${projId}/docsSelect",
 			method : "get",
 			data : {
 				path : projId
@@ -301,7 +299,6 @@
 						treeData.push(treeObj);
 					}
 					let divBlock = fn_makeBlock(data); 	
-					// fn_makeBlock(data);
 					contentArea.append(divBlock);
 
 				});
@@ -392,7 +389,7 @@
 		console.log("thisParent", thisParent);
 		console.log(data);
 		$.ajax({
-			url : "/proj/${projId}/docTest",
+			url : "/proj/${projId}/docsSelect",
 			method : "get",
 			data : {
 				path : path
@@ -460,41 +457,6 @@
 		}else{
 			cutText = text;
 		}
-		// <tbody id="content-area">
-		// 	<tr role="row" class="odd">
-		// 		<td class="sorting_1">
-		// 			<div class="media">
-		// 				<div class="media-left pr-1">
-		// 					<span>
-		// 						<i></i>
-		// 					</span>
-		// 				</div>
-		// 				<div class="media-body media-middle mt-50">
-		// 					<a id="colName" class="media-heading name" href="#"></a>
-		// 				</div>
-		// 			</div>
-		// 		</td>
-		// 	</tr>
-		// </tbody>
-		// <i class="feather icon-folder"></i>
-
-		// <div class="icheckbox_square" style="position: relative;">
-		// 	<input type="checkbox" id="input-11" style="position: absolute; opacity: 0;">
-		// 	<ins class="iCheck-helper" style="position: absolute; top: 0%; left: 0%; display: block; width: 100%; height: 100%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;"></ins>
-		// </div>
-
-		// $("<input>").attr("type", divisionCheckBox)
-		// 												.attr("name", "fileName")
-		// 												.attr("value", text)
-		// 												.attr("id", "checkbx")
-
-		// $("<div>").attr("class", "icheckbox_square").css("position", "relative")
-		// 										.append(
-		// 											$("<input>").attr("type", "chechbox").css("position","absolute").css("opacity","0")
-		// 												.append(
-		// 													$("<ins>").attr("class", "iCheck-helper").css("position", "absolute").css("top", "0%").css("left", "0%").css("display", "block").css("width","100%").css("height", "100%").css("margin", "0px").css("padding","0px").css("background", "rgb(255, 255, 255)").css("border", "0px").css("opacity", "0")
-		// 												)
-		// 										)
 
 		let contentBlock = $("<tr>").attr("role", "row").attr("class", "odd")
 								.append(
@@ -528,28 +490,6 @@
 											$("<a>").attr("id", "colRegDate").attr("href", "#").html(regDate)
 									)
 								);
-									// .append(
-									// 	$("<div>").attr("class", "file-block")
-									// 			.append( 
-									// 					$("<input>").attr("type", "checkbox")
-									// 					.attr("name", "fileName")
-									// 					.attr("value", text)
-									// 					.attr("class", "form-check-input block-check")
-									// 			)
-									// 			.append( $("<br>"))
-									// 			.append(
-									// 				$("<div>").attr("class", "img-box")
-									// 							.append(imgTag)
-									// 			)
-									// ).append(
-									// 	$("<p>").attr("class", "file-name")
-									// 			.text(cutText)
-									// );
-		
-		// let research = contentBlock.find(".file-block");
-		// if(data.dir){
-		// 	research.attr("class", "file-block dir").data("fnm", text);
-		// }
 		return contentBlock;						
 	}
 	
@@ -579,7 +519,7 @@
 
 	function fn_ajaxMoveDir(path){
 		$.ajax({
-			url : "/proj/${projId}/docTest",
+			url : "/proj/${projId}/docsSelect",
 			method : "get",
 			data : {
 				path : path
@@ -598,16 +538,6 @@
 		});
 		return path;
 	}
-	// $('#tree-area').jstree({ 'core' : {
-	//   'data' : [
-	// 	  { "id" : "1", "parent" : "#", "text" : "프로젝트 문서함"},
-	// 	  { "id" : "2", "parent" : "1", "text" : list[0] },
-	// 	  { "id" : "3", "parent" : "1", "text" : list[1] },
-	// 	  { "id" : "4", "parent" : "2", "text" : list[2] },
-	// 	  { "id" : "5", "parent" : "4", "text" : list[3] },
-	// 	]
-	//   }
-	// }); 
 	
 	// 폴더 생성 모달 
 	// 모달 띄우는 버튼 클릭시 input태그 초기화
@@ -646,7 +576,7 @@
 			beforeSend : function(xhr){
 				xhr.setRequestHeader(header, token);
 			},
-			url : "/proj/${projId}/dirDocTest",
+			url : "/proj/${projId}/dirDoc",
 			method : "post",
 			data : {path : path, dirName : dirName},
 			dataType : "json",
@@ -710,22 +640,7 @@
 	async function fn_uploadAjaxAwait(files, thisPath){
 		
 		console.log("fn_uploadAjaxAwait - thisPath -> ", thisPath);
-		
-		
 
-		// docsFileUploadBtn.submit();
-
-		// for(let i=0;i<files.length;i++){
-
-		
-
-		// console.log("docsFile[0].files: ", docsFile[0].files);
-
-		// if (docsFile[0].files.length === 0) {
-		// 	alert("파일은 선택해주세요");
-		// 	return;
-		// }
-		
 		for(let i=0; i < files.length; i++){
 			let form = new FormData();
 			let file = files[i].file;
@@ -739,19 +654,6 @@
 			await fn_uploadAjax(i, form);
 		}
 
-
-
-		// 	let file = files[i].file;
-		// 	form.append("docsFile", file);
-		// 	form.append("path", thisPath);
-			
-		// 	let progressbar = fn_makeProgressTag();
-		// 	console.log(progressbar);
-		// 	console.log(filebox[i]);
-		// 	$(filebox[i]).after(progressbar);
-		// 	var promise = fn_uploadAjax(i, form);
-		// }
-
 		$("#fileClose").modal("hide");
 		$("#docsFile").val("");
 		fn_ajaxMoveDir(thisPath);
@@ -760,36 +662,11 @@
 	// 파일 업로드 동기 처리
 	function fn_uploadAjax(index, data){
 		
-		// console.log("fn_uploadAjax - data : ", data);
-
-		// let progressbar = $(".progress-bar");
-		// let completeTd = $(".complete-td");
-		
-		// return new Promise(function(resolve, reject){
-		
 		var header = "${_csrf.headerName}";
 		var token = "${_csrf.token}";
 		
 		return new Promise(function(resolve, reject){
 			$.ajax({
-				// xhr: function() {
-				// 	var xhr = new window.XMLHttpRequest();
-					
-				// 	xhr.upload.addEventListener("progress", function(event) {
-				// 		if (event.lengthComputable) {
-				// 			var percentComplete = event.loaded / event.total;
-				// 			percentComplete = parseInt(percentComplete * 100);
-							
-				// 			$(progressbar[index]).attr("style", "width:"+percentComplete+"%");
-				// 			let iconTag = $("<img>").attr("src", "${cPath}/resources/groupware/icon/check.png")
-				// 									.attr("class", "icon-img");
-				// 			if (percentComplete === 100) {
-				// 				$(completeTd[index]).append(iconTag);	
-				// 			}
-				// 		}
-				// 	}, false);
-				// 	return xhr;
-				// },
 				beforeSend : function(xhr){
 					xhr.setRequestHeader(header, token);
 					$('#ajax_indicator').show().fadeIn('fast');
@@ -797,7 +674,7 @@
 				complete: function() {
 					$('#ajax_indicator').fadeOut();
 				},
-				url : "/proj/${projId}/uploadFileTest",
+				url : "/proj/${projId}/uploadFile",
 				method : "post",
 				data : data,
 				contentType : false,
@@ -818,14 +695,6 @@
 		
 	}
 
-	// let checkBoxs = [];
-
-	// $("input[name=fileName]:checked").each(function(i){
-
-	// 	checkBoxs.push($(this).val());
-
-	// });
-
 	// 다중 파일 다운로드 설정
 	let downloadBtn = $("#download"); 
 	downloadBtn.on("click", function(){
@@ -844,12 +713,6 @@
 			alert("체크한 파일이 없습니다.");
 			return;
 		}
-
-// 		if($("#coldivision").html() == "폴더"){
-// 			alert("폴더는 다운할 수 없습니다.");
-// 			$("input:checkbox[class='checkbx']").prop("checked", false);
-// 			return;
-// 		}
 
 		for(let i=0;i<checkBoxs.length;i++){
 			fn_fileDownload(path, checkBoxs[i].value);
